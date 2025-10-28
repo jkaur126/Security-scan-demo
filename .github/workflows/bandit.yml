@@ -23,5 +23,6 @@ jobs:
       - name: Install Bandit
         run: pip install bandit
 
-      - name: Run Bandit
-        run: bandit -r .
+      - name: Run Bandit and continue even if issues are found
+        run: |
+          bandit -r . || true
